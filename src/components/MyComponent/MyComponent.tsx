@@ -10,7 +10,12 @@ const MyComponent = observer((props: any) => {
       <div>{count}</div>
       <button onClick={() => {
         setCount()
-      }}>+</button>
+      }}>просто +</button>
+      <button onClick={() => {
+        new Promise<void>((resolve, reject) => {
+          resolve();
+        }).then(setCount)
+      }}>async +</button>
     </div>
   );
 })
